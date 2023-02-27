@@ -8,7 +8,5 @@ def sample_reponse(input_text):
 
     if user_message in ("hello", "hi"):
         return "Hey! How its going ?"
-    elif user_message in("Notice","Notices"):
-        h = scrap.main()
-
-        return h
+    elif user_message in ("notice","notices"):
+        return scrap.main()

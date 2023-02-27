@@ -8,6 +8,7 @@ print("bot started")
 
 
 
+
 def start_command(update, context):
     update.message.reply_text('Type something random to get started !')
 
@@ -19,9 +20,15 @@ def help_command(update, context):
 def handle_message(update, context):
     text = str(update.message.text).lower()
     response = R.sample_reponse(text)
-    links = scrap.main()
-    for link in links :
-        update.message.reply_text(link)
+    if(type(response) == type(set())):
+        count = 0 
+        for link in response :
+            if(count == 4):
+                break
+            count +=1
+            update.message.reply_text(link)
+    else:
+        update.message.reply_text(response)
 
 
 def error(update, context):

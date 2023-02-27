@@ -4,7 +4,6 @@ def main():
     url = 'https://www.msit.in/latest_news'
     html_text = requests.get(url).text
     soup = BeautifulSoup(html_text, 'lxml')
-    circulars = soup.find_all('div', class_='tab-content')
     title = soup.title
     anchors = soup.find_all('a')# anchor tags
     #Getting links from the tags
