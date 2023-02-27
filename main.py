@@ -1,8 +1,11 @@
 from telegram.ext import *
 import const as keys
 import responses as R
-
+import scraping as scrap
+from bs4 import BeautifulSoup
+import requests
 print("bot started")
+
 
 
 def start_command(update, context):
@@ -16,7 +19,9 @@ def help_command(update, context):
 def handle_message(update, context):
     text = str(update.message.text).lower()
     response = R.sample_reponse(text)
-    update.message.reply_text(response)
+    links = scrap.main()
+    for link in links :
+        update.message.reply_text(link)
 
 
 def error(update, context):
