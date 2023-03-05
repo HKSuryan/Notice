@@ -1,11 +1,12 @@
 from telegram.ext import *
-import const as keys
 import responses as R
 import scraping as scrap
 from bs4 import BeautifulSoup
 import requests
+from dotenv import load_dotenv
+import os
 print("bot started")
-
+load_dotenv()
 
 
 
@@ -36,7 +37,7 @@ def error(update, context):
 
 
 def main():
-    updater = Updater(keys.API_KEY, use_context=True)
+    updater = Updater(os.getenv("API_KEY"), use_context=True)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start_command))
     dp.add_handler(CommandHandler("help", help_command))
