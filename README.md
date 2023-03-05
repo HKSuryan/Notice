@@ -6,5 +6,5 @@ Used Beautiful Soup to fecth data from the college website
 used telegram.ext to access and modify the functions of my telegram bot
 
 The main.py is the file from where the bot can be started 
-All the craping is done from the scraping.py and all the reponses are managed through the responses.py
+All the scraping is done from the scraping.py and all the reponses are managed through the responses.py
 
