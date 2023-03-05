@@ -20,10 +20,10 @@ def help_command(update, context):
 def handle_message(update, context):
     text = str(update.message.text).lower()
     response = R.sample_reponse(text)
-    if(type(response) == type(set())):
+    if(type(response) == type(list())):
         count = 0 
         for link in response :
-            if(count == 4):
+            if(count == 5):
                 break
             count +=1
             update.message.reply_text(link)
