@@ -1,6 +1,8 @@
 .env
-venv
-venv/
 __pycache__
 templates
 deploy.__pycache__
+venv
+venv/bin
+venv/
+
